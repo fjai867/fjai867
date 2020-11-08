@@ -1,0 +1,45 @@
+{% extends "gestion_atletas/areaclientes.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#/</td>
+            <td>Modalidad</td>
+            <td>acción</td>
+            <td>acción</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {%if categoria %}
+        {% for Cateroria in categoria %}
+        <tr class="table table-striped">
+            <td font size ="3">{{Categoria.Id_Cat}}</td>
+            <td font size ="3" >{{Categoria.Modalidad}}</td>
+           
+            <td >
+                <a class="btn btn-primary"  href="{% url 'inicio' %}">Apuntarse</a>
+            </td>
+            <td >
+                <a class="btn btn-primary"  href="{% url 'inicio' %}">Desapuntarse</a>
+            </td>
+            
+            
+        </tr>
+        {% endfor %}
+        {%else%}
+        <h2>NO HAY NINGUNA CATEGORIA PARA ESTA PRUEBA</h2> 
+
+        {%endif%}
+    </tbody>
+
+</table>
+         
+            
+  
+
+{% endblock %}

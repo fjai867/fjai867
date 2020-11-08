@@ -1,0 +1,44 @@
+{% extends "usuarios/areaclientes.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#/</td>
+            <td>prueba</td>
+            <td>MODALIDAD</td>
+            <td>evento</td>
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        {%if object_list%}
+        {% for Categoria in object_list %}
+        <tr class="table table-striped">
+            <td font size ="3">{{Categoria.Id_Cat}}</td>
+            <td font size ="3" >{{Categoria.Id_Prueba}}</td>
+            <td font size ="3" >{{Categoria.Modalidad}}</td>
+            
+            <td >
+                <a class="btn btn-primary"  href="{% url 'inscripcion2' Categoria.pk %}">Apuntarse</a>
+            </td>
+            
+            
+        </tr>
+        {% endfor %}
+        {%else%}
+        <h2>NO HAY NINGUN REGISTRO</h2> 
+
+        {%endif%}
+    </tbody>
+
+</table>
+         
+            
+  
+
+{% endblock %}

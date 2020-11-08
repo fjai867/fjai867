@@ -1,0 +1,49 @@
+{% extends "usuarios/areaclientes.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#/</td>
+            <td>Nombre Prueba</td>
+            <td>localidad</td>
+            <td>fecha prueba</td>
+            <td>desde</td>
+            <td>hasta</td>
+            <td>evento</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {%if object_list%}
+        {% for Prueba in object_list %}
+        <tr class="table table-striped">
+            <td font size ="3" >{{Prueba.Id_Prueba}}</td>
+            <td font size ="3" >{{Prueba.Nom_Prueba}}</td>
+            <td font size ="3" >{{Prueba.Localidad}}</td>
+            <td font size ="3" >{{Prueba.Fecha_Pr}}</td>
+            <td font size ="3" >{{Prueba.Fecha_Inicio}}</td>
+            <td font size ="3" >{{Prueba.Fecha_Fin}}</td>
+            
+                <td >
+                    <a class="btn btn-primary"  href="{% url 'liscategoria' Prueba.pk %}">Categorias</a>
+                </td>
+            
+            
+        </tr>
+        {% endfor %}
+        {%else%}
+        <h2>NO HAY NINGUN REGISTRO</h2> 
+
+        {%endif%}
+    </tbody>
+
+</table>
+         
+            
+  
+
+{% endblock %}

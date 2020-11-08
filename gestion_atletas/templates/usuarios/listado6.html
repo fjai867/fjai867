@@ -1,0 +1,54 @@
+{% extends "usuarios/areaclientes.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<p2>Atletas inscritos en la prueba: {{object_list.first.Id_Prueba}} >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></p2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>#/</td>
+            <td>Nombre Atleta </td>
+            <td>Apellidos Atleta </td>
+            <td>Categoria inscrito</td>
+            
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        {%if object_list%}
+        {% for Inscrip in object_list %}
+        <tr class="table table-striped">
+            <td font size ="3" >{{Inscrip.Id_Ins}}</td>
+            <td font size ="3" >{{Inscrip.username.first_name}}</td>
+            <td font size ="3" >{{Inscrip.username.last_name}}</td>
+            <td font size ="3" >{{Inscrip.Id_Cat}}</td>
+            
+        
+               
+            
+        </tr>
+        {% endfor %}
+        <i class="fa fa-print" aria-hidden="true"></i>
+        <a class="btn btn-primary"  href="{% url 'listaInscritospdf' object_list.first.Id_Ins %}">Imprimir</a>
+
+           
+       
+    
+
+        {%else%}
+        <h2>NO HAY NINGUN REGISTRO</h2> 
+
+        {%endif%}
+    </tbody>
+    
+</table>
+         
+            
+  
+
+{% endblock %}

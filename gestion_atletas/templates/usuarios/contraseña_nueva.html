@@ -1,0 +1,51 @@
+{% extends "usuarios/areaclientes.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 style="color:#0eec0e"> CAMBIO DE CONTRASEÑA</h1>
+<form  method="POST"> {% csrf_token %} 
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-3 col-md-offset-3">
+            <div class="form-group">
+               <label style="color:#fc0707"; for="password0"> Contraseña actual: </label> 
+                <!--input class="form-control" type="text" name="password0"-->
+
+                {{form.old_password}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center ">
+        <div class="col-md-3 col-md-offset-3">
+            <div class="form-group">
+               <label style="color:#fc0707"; for="password1"> Introduce nueva contraseña: </label> 
+                <!--input class="form-control" type="password" name="password1"-->
+                {{form.new_password1}}
+            </div>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center align-items-center ">
+        <div class="col-md-3 col-md-offset-3">
+            <div class="form-group">
+               <label style="color:#fc0707"; for="password1"> Repite la nueva contraseña: </label> 
+                <!--input class="form-control" type="password" name="password1"-->
+                {{form.new_password2}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-3 col-md-offset-3">
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="aceptar">
+            </div>
+        </div>
+    </div>
+            
+            
+  </form>
+
+{% endblock %}

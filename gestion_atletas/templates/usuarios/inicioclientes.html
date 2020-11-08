@@ -1,0 +1,14 @@
+{% extends "usuarios/areaclientes.html" %}
+
+{% load static %}
+
+{% block content %}
+      {% csrf_token %}
+      {%if clientes%}
+
+      <h1>Bienvenido Atleta: {{clientes.Nom}}</h1>
+
+      {%endif%}
+
+{% endblock %}
+      

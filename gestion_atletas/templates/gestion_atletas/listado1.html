@@ -1,0 +1,45 @@
+{% extends "gestion_atletas/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr style="color: ghostwhite;">
+            <td>#/</td>
+            <td>Nombre Prueba</td>
+            <td>localidad</td>
+            <td>fecha prueba</td>
+            <td>desde</td>
+            <td>hasta</td>
+            <td>evento</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {%if object_list%}
+        {% for Prueba in object_list %}
+        <tr class="table table-striped">
+            <td font size ="3", color ="#ffffff">{{Prueba.Id_Prueba}}</td>
+            <td font size ="3", color ="#ffffff" >{{Prueba.Nom_Prueba}}</td>
+            <td font size ="3", color ="#ffffff">{{Prueba.Localidad}}</td>
+            <td font size ="3", color ="#ffffff">{{Prueba.Fecha_Pr}}</td>
+            <td font size ="3", color ="#ffffff">{{Prueba.Fecha_Inicio}}</td>
+            <td font size ="3", color ="#ffffff">{{Prueba.Fecha_Fin}}</td>
+            <td font size ="3", color ="#ffffff">{{Prueba.Fecha_Fin}}</td>
+            
+        </tr>
+        {% endfor %}
+        {%else%}
+        <h2>NO HAY NINGUN REGISTRO</h2> 
+
+        {%endif%}
+    </tbody>
+
+</table>
+         
+            
+  
+
+{% endblock %}

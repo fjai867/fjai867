@@ -1,0 +1,53 @@
+{% extends "gestion_atletas/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+      {%for post in posts%}
+     <section class="page-section clearfix">
+            <div class="container">
+                  
+            
+                  <div class="intro">
+                        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}" alt="" style="width: 50%;">
+                        <div class="intro-text left-o text.center bg-faded p-5 rounded">
+      
+                              <h2 class="section-heading mb-4">
+                                    <span class="section-heading-lower">{{post.titulo}}</span>
+                                    <span class="section-heading-upper">{{post.contenido | safe}}</span>
+                              </h2>
+                              <h5>Usuario: {{post.autor}}</h5>
+                              
+                        </div>
+      
+                  </div>
+                              
+             </div>
+                    
+
+
+      </section>
+      
+      
+
+      {% endfor %}
+
+      <section>
+            <div style="width: 75%; margin: auto;text-align: center; color: blanchedalmond;">
+                  categorias:
+                  {%for categ in Cate%}
+                        
+                        <a href="{% url 'blogfilter' categ.pk %}"> {{categ}} &nbsp; &nbsp; &nbsp;</a>
+                  {% endfor %}
+                  
+            </div>
+      </section>
+
+{% endblock %}
+      
+    
+
+      
+       
+ 

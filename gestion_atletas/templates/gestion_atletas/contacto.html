@@ -1,0 +1,73 @@
+{% extends "gestion_atletas/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+      <h1 style="color:#26f30b">CONTACTO</h1>
+      
+        
+        
+      
+      
+        <form action="/contacto/" method="POST"> {% csrf_token %} 
+
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-3 col-md-offset-3">
+            <div class="form-group">
+              <label style="color:#efeef0">Asunto:</label>
+              <input type="text" class="form-control" name="asunto"
+                           placeholder="Introduce asunto">
+            </div>
+        </div>
+     </div>
+
+     <div class="row justify-content-center align-items-center">
+      <div class="col-md-3 col-md-offset-3">
+        <div class="form-group">
+      
+          <label style="color:#efeef0">Email:</label>
+          <input type="email" class="form-control" name="email"
+                 placeholder="Introduce Mail">
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-5 col-md-offset-3">
+        <div class="form-group">
+      
+          <label style="color:#efeef0">Introduce Mensaje:</label>
+          <textarea name="mensaje" rows="15" cols="45" class="form-control" ></textarea>
+        
+        </div> 
+      </div> 
+    </div>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-5 col-md-offset-3">
+        <div class="form-group">
+
+          <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i>
+          <button type="submit" class="btn btn-success" value="Enviar">Enviar</button>
+        
+        </div> 
+      </div> 
+    </div>
+        
+        
+      </form>
+
+
+
+
+{% endblock %}
+
+      
+    
+   
+    
+
+      
+       
+ 

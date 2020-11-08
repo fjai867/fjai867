@@ -1,0 +1,18 @@
+{% extends "gestion_atletas/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+      <h2 style="color:#efeef0">REGISTRO</h2>
+      <h2 style="color:#efeef0">   </h2>
+      <form  method="POST"> {% csrf_token %} 
+            <table>
+                  {{ form.as_table }}   
+            </table>
+       
+       <button type="submit">Guardar</button>
+        
+      </form>
+
+{% endblock %}

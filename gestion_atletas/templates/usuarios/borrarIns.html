@@ -1,0 +1,14 @@
+{% extends "usuarios/areaclientes.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <h3>¿Desea eliminar el registro de {{ object.Id_Cat }}?</h3>
+    <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+    <a class="btn btn-default"  href="{% url 'listado4' %}">Cancelar</a>
+</form>
+
+{% endblock %}
