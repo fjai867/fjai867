@@ -42,7 +42,7 @@ def contacto(request):
         subject=request.POST["asunto"]
         message=request.POST["mensaje"] +" "+request.POST["email"]
         email_from=settings.EMAIL_HOST_USER
-        recipient_list=["fjai867@gmail.com"]
+        recipient_list=["fjai***@gmail.com"]
         send_mail(subject,message,email_from,recipient_list)
         return render(request,"gestion_atletas/contactogracias.html")
 
