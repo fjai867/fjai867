@@ -2,7 +2,11 @@
 
 {% load static %}
 
+
 {% block content %}
+<!-- Styles -->
+<link href="{% static 'gestion_atletas/css/estylos.css' %}" rel="stylesheet">
+
 
       <h1>MODIFICACION DE DATOS</h1>
       <form  method="POST"> {% csrf_token %} 
@@ -11,7 +15,7 @@
             </table>
                   
        
-       <button class="btn btn-primary" type="submit">Guardar</button>
+       <button class="btn1" type="submit">Guardar</button>
         
       </form>
 

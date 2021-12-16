@@ -50,6 +50,10 @@ urlpatterns = [
     path("password_change_done",PasswordChangeDoneView.as_view(template_name='usuarios/password_change_done.html'),name='password_change_done'),
     #acceso con codigo
     path('Codigo/',views.Codigo1, name='Codigo'),
+    #politica de Privacidad
+    path("politica/", views.politica, name="politica"),
+    #politica de cockiees
+    path("cookies/", views.cokies, name="cookies"),
     
     
     

@@ -290,6 +290,15 @@ class Cambiar_password(PasswordChangeView):
     template_name='usuarios/contraseña_nueva.html'
     form_class= Nuevo_PasswordChangeForm
 
+#politica de privacidad
+def politica(request):
+    return render(request,"usuarios/politica.html")
+
+#politica de coockies
+def cokies(request):
+    return render(request,"usuarios/cokis.html")
+
+
 
 
 

@@ -17,6 +17,12 @@
     <link href="{% static 'gestion_atletas/css/gestion.css' %}" rel="stylesheet">
     <!-- ICONOS EN LOS BOTONES AWENSOME -->
     <link href="{% static 'gestion_atletas/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <script> 
+    document.write("<p style='color:#efeef0'>")
+    document.write(new Date())
+    document.write("</p>")
+     </script>
 </head>
 
 <body>
@@ -38,19 +44,19 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
-            <a class="btn btn-danger" href="{% url 'inicio' %}">Inicio</a>
+            <a class="btn btn-danger" href="{% url 'inicio' %}"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
           </li>
           <li class="nav-item {% if request.path == '/listado' %} active {% endif %} px-lg-4">
-            <a class="btn btn-danger" href="{% url 'listado' %}">Calendario</a>
+            <a class="btn btn-danger" href="{% url 'listado' %}"><i class="fa fa-calendar-o" aria-hidden="true"></i> Calendario</a>
           </li>
           <li class="nav-item {% if request.path == '/login' %} active {% endif %} px-lg-4">
-            <a class="btn btn-danger" href="{% url  'login' %}">Usuarios</a>
+            <a class="btn btn-danger" href="{% url  'login' %}"> <i class="fa fa-user-circle" aria-hidden="true"></i> Usuarios</a>
           </li>
           <li class="nav-item {% if request.path == '/contacto' %} active {% endif %}  px-lg-4">
-            <a class="btn btn-danger" href="{% url 'contacto' %}">Contacto</a>
+            <a class="btn btn-danger" href="{% url 'contacto' %}"> <i class="fa fa-envelope" aria-hidden="true"></i> Contacto</a>
           </li>
           <li class="nav-item {% if request.path == '/blog' %} active {% endif %} px-lg-4">
-            <a class="btn btn-danger" href="{% url 'blog' %}">Blog</a>
+            <a class="btn btn-danger" href="{% url 'blog' %}"> <i class="fa fa-book" aria-hidden="true"></i> Blog</a>
           </li>
          
         </ul>
@@ -90,9 +96,9 @@
 	        </a>
 	    </p>
         <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
+        	<a href="{% url 'politica' %}" class="link">Política de privacidad</a> ·
         	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
+        	<a href="{% url 'cookies' %}" class="link">Cookies</a>
 		</p>
         <p class="m-0 mbt1">&copy; Club de Atletismo UBU campos de Castilla 2020</p>
       </div>
